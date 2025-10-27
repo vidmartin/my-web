@@ -30,13 +30,23 @@ body {
   --white: #ededed;
   --background: var(--white);
   --foreground: var(--black);
-  --sidespace: 10cm;
+  --sidespace: 20%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--black);
     --foreground: var(--white);
+  }
+}
+
+@media (max-width: 25cm) {
+  :root {
+    --sidespace: 1cm;
+  }
+
+  .links {
+    display: none;
   }
 }
 
