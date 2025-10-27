@@ -1,7 +1,43 @@
 
+type Project = {
+  name: string,
+  year: number,
+  technologies: string[],
+  description: string,
+};
+
+function ProjectView(props: { projects: Project[] }) {
+  const lines: string[] = [];
+
+  for (const project of props.projects) {
+    lines.push(`+ ${project.year}: ${project.name} (${project.technologies.join(', ')})`);
+    lines.push("|");
+    lines.push(`|   ${project.description}`);
+    lines.push("|");
+  }
+
+  return <div className="pl-5 pt-5 whitespace-pre-wrap">{lines.join("\n")}</div>
+}
+
+const PROJECTS: Project[] = [
+    {
+        name: "MyML",
+        technologies: ["Python", "numpy"],
+        year: 2025,
+        description: "My custom framework for deep learning that helps me understand neural networks."
+    },
+    {
+        name: "an interactive 3D application",
+        technologies: ["C++", "OpenGL"],
+        year: 2024,
+        description: "A semestral project for a course in computer graphics, programmed in C++ using OpenGL. "
+    }
+]
+
 export default function Projects(props: { idAttr: string }) {
     return <div className="block" id={props.idAttr}>
         <h1>projects</h1>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae libero non ligula finibus condimentum quis ut nibh. Quisque sagittis auctor ultrices. Donec et dui sagittis, pretium justo vel, imperdiet felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sit amet rutrum sem, id dapibus augue. Quisque elit lorem, molestie non risus non, bibendum placerat lectus. Suspendisse potenti. Nullam eu pharetra sapien, non luctus ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod enim, auctor finibus risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus aliquet, velit id eleifend iaculis, mauris quam egestas turpis, eu imperdiet arcu odio ut nisl. Nullam ullamcorper molestie porttitor. Nulla mollis magna pulvinar lorem vulputate semper. Donec risus ligula, venenatis a scelerisque vel, luctus vel quam. 
+        Here are some personal projects of mine, including school projects.
+        <ProjectView projects={PROJECTS} />
     </div>;
 }

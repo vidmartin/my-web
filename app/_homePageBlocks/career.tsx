@@ -29,7 +29,7 @@ const JOBS: Job[] = [
     yearFrom: 2021,
     yearTo: 2025,
     activities: [
-      "development and maitainment of company's internal web application",
+      "development and maintainment of company's internal web application",
       "rewriting application from jQuery to React",
       "development of a new GraphQL API to replace an old REST API",
       "redesigning and extending company's MySQL database",
