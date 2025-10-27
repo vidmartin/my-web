@@ -27,7 +27,7 @@ export default function RootLayout({
         </div>
         <div className="links">
           <ul>
-            {HOME_PAGE_BLOCKS.map(({ name, idAttr }) => <li key={idAttr}><Link href={`/#${idAttr}`}>{name}</Link></li>)}
+            {HOME_PAGE_BLOCKS.map(({ name, idAttr }) => <li key={idAttr}><Link href={`/#${idAttr}`}>{name} <div className="hover-indicator" style={{ position: "absolute", right: "1cm" }}>&gt;</div></Link></li>)}
           </ul>
           <br/>
           <ul>

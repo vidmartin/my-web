@@ -96,3 +96,15 @@ h1 {
   text-align: right;
   padding: 1.5cm;
 }
+
+.hover-indicator {
+  display: none;
+}
+
+:hover > .hover-indicator {
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: underline;
+}

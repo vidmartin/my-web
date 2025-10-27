@@ -1,8 +1,6 @@
 
 randomize order or "career" / "projects" / "blog" ?
 
-make links more visually interactive
-
 projects view / blog posts view
 - show first three and give option to expand
 - search for blog posts?
