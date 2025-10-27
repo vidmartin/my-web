@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+} */
+
+/* @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  } 
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+:root {
+  --black: #171717;
+  --white: #ededed;
+  --background: var(--white);
+  --foreground: var(--black);
+  --sidespace: 10cm;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--black);
+    --foreground: var(--white);
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-size: 14pt;
+  line-height: 20pt;
+  padding-left: var(--sidespace);
+  padding-right: var(--sidespace);
+}
+
+h1 {
+  font-size: 1cm;
+  margin-bottom: 0.5cm;
+}
+
+.title {
+  font-size: 2cm;
+  padding-top: 2cm;
+  line-height: 1.5cm;
+  text-align: center;
+}
+
+.block {
+  padding-bottom: 1.5cm;
+}
+
+.me {
+  height: 7cm;
+  width: 7cm;
+  display: inline-block;
+  background-image: url("/me.jpg");
+  background-position: 50% 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 0.5cm;
+}
+
+.links {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--sidespace);
+  left: 0;
+  text-align: right;
+  padding: 1.5cm;
+}

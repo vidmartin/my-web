@@ -1,0 +1,31 @@
+
+git repo
+
+smaller resolution of me.jpg
+
+single source of truth for "about me" / "career" / "projects" / "blog": order, names
+
+randomize order or "career" / "projects" / "blog" ?
+
+make links more visually interactive
+
+projects view / blog posts view
+- show first three and give option to expand
+- search for blog posts?
+
+responsive design
+- remove body padding when view too narrow
+- hide side navigation links when view too narrow
+- put navigation links at the top when view too narrow
+
+favicon
+
+career content
+
+projects content
+
+blog content
+- where will blog posts be stored?
+- will there be a separate page with blog post list?
+
+contact form
