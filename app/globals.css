@@ -69,7 +69,7 @@ h1 {
   height: 7cm;
   width: 7cm;
   display: inline-block;
-  background-image: url("/me.jpg");
+  background-image: url("/me-small.jpg");
   background-position: 50% 20%;
   background-size: cover;
   background-repeat: no-repeat;

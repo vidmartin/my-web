@@ -1,38 +1,11 @@
-import Image from "next/image";
+
+import { HOME_PAGE_BLOCKS } from "./globals";
 
 export default function Home() {
-  return <>
-    <div className="block" id="about-me">
-      <div className="text-center">
-        <div className="me" />
-      </div>
-      <h1>about me</h1>
-      I am passionate about programming since early childhood. At 23 years of age, I
-      already have several years of working experience in this field. I have gained a
-      Bachelor's degree at the Faculty of Information Technology of the Czech
-      Technical University with the specialization Artificial Intelligence, and I will
-      probably continue studying there for a Master's degree. I have a lot of personal
-      projects, many of them having been made for school.
-      I have already learned enough about Computer Science to know that I know
-      nothing at all, and thus I'm always eager to learn new things, discover new
-      technologies, and develop my soft skills. Apart from programming, I also like
-      music and am a self-taught piano and guitar user.
-      
-    </div>
-    <div className="block" id="career">
-      <h1>career</h1>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae libero non ligula finibus condimentum quis ut nibh. Quisque sagittis auctor ultrices. Donec et dui sagittis, pretium justo vel, imperdiet felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sit amet rutrum sem, id dapibus augue. Quisque elit lorem, molestie non risus non, bibendum placerat lectus. Suspendisse potenti. Nullam eu pharetra sapien, non luctus ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod enim, auctor finibus risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus aliquet, velit id eleifend iaculis, mauris quam egestas turpis, eu imperdiet arcu odio ut nisl. Nullam ullamcorper molestie porttitor. Nulla mollis magna pulvinar lorem vulputate semper. Donec risus ligula, venenatis a scelerisque vel, luctus vel quam. 
-    </div>
-    <div className="block" id="projects">
-      <h1>projects</h1>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae libero non ligula finibus condimentum quis ut nibh. Quisque sagittis auctor ultrices. Donec et dui sagittis, pretium justo vel, imperdiet felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sit amet rutrum sem, id dapibus augue. Quisque elit lorem, molestie non risus non, bibendum placerat lectus. Suspendisse potenti. Nullam eu pharetra sapien, non luctus ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod enim, auctor finibus risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus aliquet, velit id eleifend iaculis, mauris quam egestas turpis, eu imperdiet arcu odio ut nisl. Nullam ullamcorper molestie porttitor. Nulla mollis magna pulvinar lorem vulputate semper. Donec risus ligula, venenatis a scelerisque vel, luctus vel quam. 
-    </div>
-    <div className="block" id="blog">
-      <h1>blog</h1>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae libero non ligula finibus condimentum quis ut nibh. Quisque sagittis auctor ultrices. Donec et dui sagittis, pretium justo vel, imperdiet felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sit amet rutrum sem, id dapibus augue. Quisque elit lorem, molestie non risus non, bibendum placerat lectus. Suspendisse potenti. Nullam eu pharetra sapien, non luctus ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer sit amet euismod enim, auctor finibus risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus aliquet, velit id eleifend iaculis, mauris quam egestas turpis, eu imperdiet arcu odio ut nisl. Nullam ullamcorper molestie porttitor. Nulla mollis magna pulvinar lorem vulputate semper. Donec risus ligula, venenatis a scelerisque vel, luctus vel quam. 
-    </div>
-    <div style={{height: "19cm"}}>&nbsp;</div>
-  </>;
+    return <>
+        {HOME_PAGE_BLOCKS.map(({ component: Component, idAttr }) => <Component idAttr={idAttr} key={idAttr} />)}
+        <div style={{height: "19cm"}}>&nbsp;</div>
+    </>;
 }
 
 // export default function Home() {

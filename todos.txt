@@ -1,10 +1,4 @@
 
-git repo
-
-smaller resolution of me.jpg
-
-single source of truth for "about me" / "career" / "projects" / "blog": order, names
-
 randomize order or "career" / "projects" / "blog" ?
 
 make links more visually interactive
