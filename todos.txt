@@ -14,8 +14,6 @@ responsive design
 
 favicon
 
-career content
-
 projects content
 
 blog content
