@@ -1,9 +1,11 @@
 
-randomize order or "career" / "projects" / "blog" ?
+consistent formatting
 
 projects view / blog posts view
 - show first three and give option to expand
 - search for blog posts?
+
+upload Factory rat to GitHub
 
 responsive design
 - remove body padding when view too narrow
