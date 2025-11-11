@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { PropsWithChildren, useEffect, useRef, useState } from "react"
 
 export type TerminalBlockProps = PropsWithChildren<{
     title: string,
+    href?: string,
 }>;
 
 export default function TerminalBlock(props: TerminalBlockProps) {
@@ -24,7 +26,9 @@ export default function TerminalBlock(props: TerminalBlockProps) {
 
     const lineHeight = titleRef.current?.clientHeight ?? null;
     return <div className="relative">
-        <div ref={titleRef}>+ {props.title}</div>
+        <div ref={titleRef}>+ {
+            props.href !== undefined ? (<Link href={props.href}>{props.title}</Link>) : props.title
+        }</div>
         {
             (observedHeight !== null && lineHeight !== null) ? 
                 new Array(Math.floor((observedHeight + 1) / lineHeight + 2)).fill(0).map((_, i) => <div key={i}>|</div>)
