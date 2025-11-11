@@ -13,7 +13,6 @@ export default function Projects(props: { idAttr: string }) {
             A semestral project for a course in computer graphics, programmed in C++ using OpenGL.
             I also had to create a simple web page for it, which you can marvel at <a href="https://cent.felk.cvut.cz/courses/PGR/archives/2023-2024/S-FIT/vidmamar/">here</a> (it's in Czech).
           </TerminalBlock>
-          {/* {PROJECTS.map((project, i) => <TerminalBlock key={i} title={project.name}>{project.description}</TerminalBlock>)} */}
         </div>
     </div>;
 }

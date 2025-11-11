@@ -4,6 +4,7 @@ import AboutMe from "./_homePageBlocks/aboutMe";
 import Career from "./_homePageBlocks/career";
 import Projects from "./_homePageBlocks/projects";
 import Blog from "./_homePageBlocks/blog";
+import Contact from "./_homePageBlocks/contact";
 
 type HomePageBlockInfo = {
     name: string,
@@ -31,5 +32,10 @@ export const HOME_PAGE_BLOCKS: HomePageBlockInfo[] = [
         name: "blog",
         component: Blog,
         idAttr: "blog",
+    },
+    {
+        name: "contact",
+        component: Contact,
+        idAttr: "contact",
     }
 ];
