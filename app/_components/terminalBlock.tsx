@@ -29,13 +29,14 @@ export default function TerminalBlock(props: TerminalBlockProps) {
         <div ref={titleRef}>+ {
             props.href !== undefined ? (<Link href={props.href}>{props.title}</Link>) : props.title
         }</div>
-        {
-            (observedHeight !== null && lineHeight !== null) ? 
-                new Array(Math.floor((observedHeight + 1) / lineHeight + 2)).fill(0).map((_, i) => <div key={i}>|</div>)
-                : <></>
-                // (that (observedHeight + 1) works instead of just observedHeight was determined via trial and error)
-        }
-        <div className="absolute top-[3em] left-[2em]" ref={contentRef}>
+        <div className="absolute top-[1lh]">
+            {
+                (observedHeight !== null && lineHeight !== null) ?
+                    new Array(Math.floor(observedHeight / lineHeight + 1)).fill(0).map((_, i) => <div key={i}>|</div>)
+                    : <></>
+            }
+        </div>
+        <div className="pl-[3ch] pt-[1lh] pb-[1lh]" ref={contentRef}>
             {props.children}
         </div>
     </div>

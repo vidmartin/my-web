@@ -35,7 +35,7 @@ export default function RootLayout({
             <li><a href="https://cz.linkedin.com/in/martin-vidmar-0168a1195">linkedin</a></li>
           </ul>
         </div>
-        <div style={{ maxWidth: "30cm", display: "inline-block", textAlign: "justify" }}>
+        <div style={{ maxWidth: "30cm",  }}>
           {children}
         </div>
       </body>

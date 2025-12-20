@@ -108,7 +108,7 @@ h1 {
 
 .hover-indicator {
   display: none;
-}
+}j
 
 :hover > .hover-indicator {
   display: inline-block;
@@ -116,4 +116,19 @@ h1 {
 
 a {
   text-decoration: underline;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul.list-dash > li {
+  padding-left: 2ch;
+  position: relative;
+}
+
+ul.list-dash > li:before {
+  content: "- ";
+  position: absolute;
+  left: 0;
 }

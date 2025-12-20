@@ -6,17 +6,21 @@ export default function Career(props: { idAttr: string }) {
     <h1>career</h1>
     <div className="pl-5 pt-5">
       <TerminalBlock title={"Marketup (2021 - 2025)"}>
-        - development and maintainment of company's internal web application <br />
-        - rewriting application from jQuery to React <br />
-        - development of a new GraphQL API to replace an old REST API <br />
-        - redesigning and extending company's MySQL database <br />
-        - development of company's Google Cloud infrastructure <br />&nbsp;
+        <ul className="list-dash">
+          <li>development and maintainment of company's internal web application</li>
+          <li>rewriting application from jQuery to React</li>
+          <li>development of a new GraphQL API to replace an old REST API</li>
+          <li>redesigning and extending company's MySQL database</li>
+          <li>development of company's Google Cloud infrastructure</li>
+        </ul>
       </TerminalBlock>
       <TerminalBlock title={"AKSYSTEM (2020 - 2022)"}>
-        - developing add-ons for the POHODA accounting system in .NET <br />
-        - leveraging POHODA's XML API <br />
-        - integration with POHODA's MS SQL database <br />
-        - interacting with various REST APIs <br /> &nbsp;
+        <ul className="list-dash">
+          <li>developing add-ons for the POHODA accounting system in .NET</li>
+          <li>leveraging POHODA's XML API</li>
+          <li>integration with POHODA's MS SQL database</li>
+          <li>interacting with various REST APIs</li>
+        </ul>
       </TerminalBlock>
     </div>
   </div>
