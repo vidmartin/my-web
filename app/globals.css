@@ -42,7 +42,7 @@ body {
 
 @media (max-width: 25cm) {
   :root {
-    --sidespace: 1cm;
+    --sidespace: 5em;
   }
 
   .links {

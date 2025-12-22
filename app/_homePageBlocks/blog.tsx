@@ -1,9 +1,9 @@
 
 import TerminalBlock from "../_components/terminalBlock";
-import { BLOG_POSTS } from "../globals";
+import { BLOG_POST_REPOSITORY } from "../globals";
 
 export default function Blog(props: { idAttr: string }) {
-    const postsArray = Object.values(BLOG_POSTS);
+    const postsArray = BLOG_POST_REPOSITORY.getAllMetadata();
     postsArray.sort((a, b) => a.publishDate.getTime() - b.publishDate.getTime());
 
     return <div className="block" id={props.idAttr}>

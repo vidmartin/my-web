@@ -1,6 +1,8 @@
 
 consistent formatting
 
+fix loading of TerminalBlock's
+
 projects view / blog posts view
 - show first three and give option to expand
 - search for blog posts?
@@ -8,8 +10,8 @@ projects view / blog posts view
 upload Factory rat to GitHub
 
 responsive design
-- remove body padding when view too narrow
-- hide side navigation links when view too narrow
+- remove body padding when view too narrow DONE
+- hide side navigation links when view too narrow DONE
 - put navigation links at the top when view too narrow
 
 favicon
@@ -21,3 +23,6 @@ blog content
 - will there be a separate page with blog post list?
 
 contact form
+- captcha?
+- remind user to include contact for themselves
+- highlight textarea when focused

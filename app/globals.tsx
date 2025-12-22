@@ -5,6 +5,7 @@ import Career from "./_homePageBlocks/career";
 import Projects from "./_homePageBlocks/projects";
 import Blog from "./_homePageBlocks/blog";
 import Contact from "./_homePageBlocks/contact";
+import { readdir } from "fs/promises";
 
 type HomePageBlockInfo = {
     name: string,
@@ -40,20 +41,44 @@ export const HOME_PAGE_BLOCKS: HomePageBlockInfo[] = [
     }
 ];
 
-type BlogPost = {
+type BlogPostMetadata = {
+    id: number,
     title: string,
     description: string,
     publishDate: Date,
-    component: () => React.ReactElement,
 }
 
-export const BLOG_POSTS: { [key: number]: BlogPost } = {
+export interface IBlogPostRepository {
+    getAllMetadata(): BlogPostMetadata[],
+    getMetadataById(id: number): BlogPostMetadata,
+    getContentById(id: number): string,
+}
+
+const BLOG_POSTS: { [key: number]: BlogPostMetadata } = {
     1: {
+        id: 1,
         title: "My first post",
         description: "The time to unleash my wisdom upon the world has come. An exciting time indeed!",
         publishDate: new Date(2025, 11, 11),
-        component() {
-            return <div>aaaaaaaa</div>
-        }
+    },
+    2: {
+        id: 2,
+        title: "My first post",
+        description: "The time to unleash my wisdom upon the world has come. An exciting time indeed!",
+        publishDate: new Date(2025, 11, 11),
     }
 }
+
+export class MockBlogPostRepository implements IBlogPostRepository {
+    getAllMetadata(): BlogPostMetadata[] {
+        return Object.values(BLOG_POSTS);
+    }
+    getMetadataById(id: number): BlogPostMetadata {
+        return BLOG_POSTS[id];
+    }
+    getContentById(id: number): string {
+        return "this is testing content";
+    }
+}
+
+export const BLOG_POST_REPOSITORY = new MockBlogPostRepository();
