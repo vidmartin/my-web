@@ -1,8 +1,4 @@
 
-consistent formatting
-
-fix loading of TerminalBlock's
-
 projects view / blog posts view
 - show first three and give option to expand
 - search for blog posts?
