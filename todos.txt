@@ -6,8 +6,6 @@ projects view / blog posts view
 upload Factory rat to GitHub
 
 responsive design
-- remove body padding when view too narrow DONE
-- hide side navigation links when view too narrow DONE
 - put navigation links at the top when view too narrow
 
 favicon
@@ -15,8 +13,9 @@ favicon
 projects content
 
 blog content
-- where will blog posts be stored?
-- will there be a separate page with blog post list?
+- blog post repository
+    - how to implement it so that we don't have to parse one markdown multiple times?
+- separate page with blog post list
 
 contact form
 - captcha?
