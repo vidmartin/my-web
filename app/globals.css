@@ -28,8 +28,11 @@ body {
 :root {
   --black: #171717;
   --white: #ededed;
+  --light-gray: #d6d6d6;
+  --dark-gray: #272727;
   --background: var(--white);
   --foreground: var(--black);
+  --code-background: var(--light-gray);
   --sidespace: 20%;
 }
 
@@ -37,6 +40,7 @@ body {
   :root {
     --background: var(--black);
     --foreground: var(--white);
+    --code-background: var(--dark-gray);
   }
 }
 
@@ -136,4 +140,18 @@ ul.list-dash > li:before {
   content: "- ";
   position: absolute;
   left: 0;
+}
+
+.code {
+  font-family: unset;
+  background-color: var(--code-background);
+  padding-left: 5pt;
+  padding-right: 5pt;
+  padding-top: 2pt;
+  padding-bottom: 2pt;
+}
+
+pre.code {
+  padding: 1em;
+  overflow: scroll;
 }
