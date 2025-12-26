@@ -1,4 +1,5 @@
 
+import { MathJax } from "better-react-mathjax";
 import { Nodes } from "mdast";
 
 export default function MarkdownNode({node}: { node: Nodes }) {
@@ -41,6 +42,12 @@ export default function MarkdownNode({node}: { node: Nodes }) {
                 title={node.title ?? undefined}
                 className="inline"
             /></div>
+        } else if (node.type == "inlineMath") {
+            return <MathJax style={{ display: "inline-block" }}>{`\\(${node.value}\\)`}</MathJax>
+        } else if (node.type == "math") {
+            return <div className="text-center mb-5 text-2xl">
+                <MathJax>{`\\[${node.value}\\]`}</MathJax>
+            </div>;
         } else {
             return <>{JSON.stringify(node)}</>; // unsupported node type
         }
