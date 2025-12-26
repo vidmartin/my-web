@@ -1,9 +1,8 @@
 
 import { BLOG_POST_REPOSITORY } from "@/app/globals";
 import { fromMarkdown } from "mdast-util-from-markdown";
-import { frontmatter } from "micromark-extension-frontmatter";
-import { frontmatterFromMarkdown } from "mdast-util-frontmatter";
-import { Nodes } from "mdast";
+import { math } from "micromark-extension-math";
+import { mathFromMarkdown } from "mdast-util-math";
 import MarkdownNode from "@/app/_components/markdownNode";
 
 export default async function BlogPost(props: PageProps<"/blog/[id]">) {
@@ -13,8 +12,8 @@ export default async function BlogPost(props: PageProps<"/blog/[id]">) {
     const metadata = await BLOG_POST_REPOSITORY.getMetadataById(id);
     const content = await BLOG_POST_REPOSITORY.getContentById(id)
     const ast = fromMarkdown(content, {
-        // extensions: [frontmatter(["yaml"])],
-        // mdastExtensions: [frontmatterFromMarkdown(["yaml"])],
+        extensions: [math()],
+        mdastExtensions: [mathFromMarkdown()],
     });
 
     return <>
