@@ -1,3 +1,4 @@
+"use client";
 
 import { MathJax } from "better-react-mathjax";
 import { Nodes } from "mdast";
