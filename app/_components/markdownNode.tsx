@@ -1,7 +1,7 @@
-"use client";
 
 import { MathJax } from "better-react-mathjax";
 import { Nodes } from "mdast";
+import MathRenderer from "./mathRenderer";
 
 export default function MarkdownNode({node}: { node: Nodes }) {
     if ("children" in node) {
@@ -44,10 +44,10 @@ export default function MarkdownNode({node}: { node: Nodes }) {
                 className="inline"
             /></div>
         } else if (node.type == "inlineMath") {
-            return <MathJax style={{ display: "inline-block" }}>{`\\(${node.value}\\)`}</MathJax>
+            return <MathRenderer inline={true} latex={node.value} />
         } else if (node.type == "math") {
             return <div className="text-center mb-5 text-2xl">
-                <MathJax>{`\\[${node.value}\\]`}</MathJax>
+                <MathRenderer inline={false} latex={node.value} />
             </div>;
         } else {
             return <>{JSON.stringify(node)}</>; // unsupported node type
