@@ -80,7 +80,6 @@ export class FilesystemBlogPostRepository implements IBlogPostRepository {
 
             const yamlMetadata = fileContent.slice(yamlMetadataStartIndex, yamlMetadataEndIndex);
             const loadedMetadata = yaml.load(yamlMetadata, { schema: yaml.FAILSAFE_SCHEMA });
-            console.log(JSON.stringify(loadedMetadata));
 
             const actualContent = fileContent.slice(contentStartIndex);
 
