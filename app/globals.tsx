@@ -50,3 +50,7 @@ export const BLOG_POST_REPOSITORY = process.env["BLOG_POSTS_DIR"] != undefined ?
     new EmptyBlogPostRepository();
 
 export const PROJECT_REPOSITORY = new HardCodedProjectsRepository();
+
+export function displayDate(date: Date) {
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+}
