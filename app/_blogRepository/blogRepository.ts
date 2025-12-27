@@ -8,6 +8,6 @@ export type BlogPostMetadata = {
 
 export interface IBlogPostRepository {
     getAllMetadata(): Promise<BlogPostMetadata[]>,
-    getMetadataById(id: number): Promise<BlogPostMetadata>,
-    getContentById(id: number): Promise<string>,
+    getMetadataById(id: number): Promise<BlogPostMetadata | null>,
+    getContentById(id: number): Promise<string | null>,
 }

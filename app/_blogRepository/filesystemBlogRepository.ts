@@ -106,18 +106,12 @@ export class FilesystemBlogPostRepository implements IBlogPostRepository {
         const blogPosts = await this._getBlogPosts();
         return Object.values(blogPosts).map(record => record.metadata);
     }
-    async getMetadataById(id: number): Promise<BlogPostMetadata> {
+    async getMetadataById(id: number): Promise<BlogPostMetadata | null> {
         const blogPosts = await this._getBlogPosts();
-        if (!(id in blogPosts)) {
-            throw new Error(`blog post with id ${id} doesn't exist`);
-        }
-        return blogPosts[id].metadata;
+        return blogPosts[id]?.metadata ?? null;
     }
-    async getContentById(id: number): Promise<string> {
+    async getContentById(id: number): Promise<string | null> {
         const blogPosts = await this._getBlogPosts();
-        if (!(id in blogPosts)) {
-            throw new Error(`blog post with id ${id} doesn't exist`);
-        }
-        return blogPosts[id].content;
+        return blogPosts[id]?.content ?? null;
     }
 }
