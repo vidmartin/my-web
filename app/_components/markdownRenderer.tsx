@@ -4,11 +4,16 @@ import { mathFromMarkdown } from "mdast-util-math";
 import { math } from "micromark-extension-math";
 import MarkdownNode from "./markdownNode";
 
-export default function MarkdownRenderer(props: { content: string }) {
+export default function MarkdownRenderer(
+    props: {
+        content: string,
+        paragraphClassNames?: string,
+    }
+) {
     const ast = fromMarkdown(props.content, {
         extensions: [math()],
         mdastExtensions: [mathFromMarkdown()],
     });
 
-    return <MarkdownNode node={ast} />;
+    return <MarkdownNode node={ast} paragraphClassNames={props.paragraphClassNames} />;
 }

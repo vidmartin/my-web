@@ -3,9 +3,19 @@ import { MathJax } from "better-react-mathjax";
 import { Nodes } from "mdast";
 import MathRenderer from "./mathRenderer";
 
-export default function MarkdownNode({node}: { node: Nodes }) {
+export default function MarkdownNode(
+    props: {
+        node: Nodes,
+        paragraphClassNames?: string
+    }
+) {
+    const node = props.node;
+    const paragraphClassNames = props.paragraphClassNames ?? "mb-5 text-justify";
+
     if ("children" in node) {
-        const childrenNodes = node.children.map((child, i) => <MarkdownNode key={i} node={child} />);
+        const childrenNodes = node.children.map(
+            (child, i) => <MarkdownNode key={i} node={child} paragraphClassNames={props.paragraphClassNames} />
+        );
         if (node.type == "heading") {
             if (node.depth == 1) {
                 return <h1 className="mt-10">{childrenNodes}</h1>
@@ -17,7 +27,7 @@ export default function MarkdownNode({node}: { node: Nodes }) {
                 throw new Error(`unsupported heading depth ${node.depth}`);
             }
         } else if (node.type == "paragraph") {
-            return <div className="mb-5 text-justify">{childrenNodes}</div>;
+            return <div className={paragraphClassNames}>{childrenNodes}</div>;
         } else if (node.type == "strong") {
             return <b>{childrenNodes}</b>;
         } else if (node.type == "emphasis") {
