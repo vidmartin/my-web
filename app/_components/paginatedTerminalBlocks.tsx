@@ -25,7 +25,7 @@ export function PaginatedTerminalBlocks(
     );
     return <div>
         <div>{
-            blocksToShow.map(block => <TerminalBlock title={block.title} href={block.href}>
+            blocksToShow.map((block, i) => <TerminalBlock key={i} title={block.title} href={block.href}>
                 <MarkdownRenderer content={block.content} paragraphClassNames="" />
             </TerminalBlock>)
         }</div>
