@@ -9,6 +9,8 @@
   --foreground: var(--black);
   --code-background: var(--light-gray);
   --sidespace: 20%;
+  --font-size: 14pt;
+  --line-height: 20pt;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,9 +21,9 @@
   }
 }
 
-@media (max-width: 25cm) {
+@media (width < 25cm) {
   :root {
-    --sidespace: 5em;
+    --sidespace: 3em;
   }
 
   .links {
@@ -29,17 +31,24 @@
   }
 }
 
-@media (min-width: 25cm) {
+@media (width >= 25cm) {
   .links-narrow {
     display: none;
+  }
+}
+
+@media (width < 20cm) {
+  :root {
+    --font-size: 12pt;
+    --line-height: 18pt;
   }
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-size: 14pt;
-  line-height: 20pt;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   padding-left: var(--sidespace);
   padding-right: var(--sidespace);
 }
@@ -54,11 +63,22 @@ h2 {
   margin-bottom: 0.5cm;
 }
 
-.title {
-  font-size: 2cm;
-  padding-top: 2cm;
-  line-height: 1.5cm;
-  text-align: center;
+@media (width >= 20cm) {
+  .title {
+    font-size: 2cm;
+    padding-top: 2cm;
+    line-height: 1.5cm;
+    text-align: center;
+  }
+}
+
+@media (width < 20cm) {
+  .title {
+    font-size: 1.5cm;
+    padding-top: 2cm;
+    line-height: 1.125cm;
+    text-align: center;
+  }
 }
 
 .block {
