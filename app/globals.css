@@ -11,6 +11,10 @@
   --sidespace: 20%;
   --font-size: 14pt;
   --line-height: 20pt;
+  --h1-size: 1cm;
+  --h2-size: 0.8cm;
+  --header-margin-bottom: 0.5cm;
+  --me-size: 7cm;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,8 +43,12 @@
 
 @media (width < 20cm) {
   :root {
-    --font-size: 12pt;
-    --line-height: 18pt;
+    --font-size: 10pt;
+    --line-height: 14pt;
+    --h1-size: 0.75cm;
+    --h2-size: 0.6cm;
+    --header-margin-bottom: 0.375cm;
+    --me-size: 5cm;
   }
 }
 
@@ -54,13 +62,13 @@ body {
 }
 
 h1 {
-  font-size: 1cm;
-  margin-bottom: 0.5cm;
+  font-size: var(--h1-size);
+  margin-bottom: var(--header-margin-bottom);
 }
 
 h2 {
-  font-size: 0.8cm;
-  margin-bottom: 0.5cm;
+  font-size: var(--h2-size);
+  margin-bottom: var(--header-margin-bottom);
 }
 
 @media (width >= 20cm) {
@@ -87,8 +95,8 @@ h2 {
 }
 
 .me {
-  height: 7cm;
-  width: 7cm;
+  height: var(--me-size);
+  width: var(--me-size);
   display: inline-block;
   background-image: url("/me-small.jpg");
   background-position: 50% 20%;
