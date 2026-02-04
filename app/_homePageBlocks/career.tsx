@@ -12,6 +12,7 @@ export default function Career(props: { idAttr: string }) {
           <li>development of a new GraphQL API to replace an old REST API</li>
           <li>redesigning and extending company's MySQL database</li>
           <li>development of company's Google Cloud infrastructure</li>
+          <li>collaboration with colleagues in searching for effective solutions</li>
         </ul>
       </TerminalBlock>
       <TerminalBlock title={"AKSYSTEM (2020 - 2022)"}>
@@ -20,6 +21,7 @@ export default function Career(props: { idAttr: string }) {
           <li>leveraging POHODA's XML API</li>
           <li>integration with POHODA's MS SQL database</li>
           <li>interacting with various REST APIs</li>
+          <li>testing add-ons on a testing environment</li>
         </ul>
       </TerminalBlock>
     </div>

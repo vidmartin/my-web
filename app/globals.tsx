@@ -38,11 +38,11 @@ export const HOME_PAGE_BLOCKS: HomePageBlockInfo[] = [
         component: Blog,
         idAttr: "blog",
     },
-    {
-        name: "contact",
-        component: Contact,
-        idAttr: "contact",
-    }
+    // {
+    //     name: "contact",
+    //     component: Contact,
+    //     idAttr: "contact",
+    // }
 ];
 
 export const BLOG_POST_REPOSITORY = process.env["BLOG_POSTS_DIR"] != undefined ?
