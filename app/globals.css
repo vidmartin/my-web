@@ -94,6 +94,12 @@ h2 {
   padding-top: 0.75cm;
 }
 
+.footer {
+  text-align: center;
+  font-size: 80%;
+  padding: 1cm;
+}
+
 .me {
   height: var(--me-size);
   width: var(--me-size);

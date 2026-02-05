@@ -59,6 +59,9 @@ export default function RootLayout({
                     <div style={{ maxWidth: "30cm", }}>
                         {children}
                     </div>
+                    <div className="footer">
+                        <div>Icons made by <a href="https://www.flaticon.com/authors/phoenix-group" title="Phoenix Group">Phoenix Group</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                    </div>
                 </MathJaxContext>
             </body>
         </html>
