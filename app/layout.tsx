@@ -56,7 +56,7 @@ export default function RootLayout({
                         {" : "}
                         <a href="https://cz.linkedin.com/in/martin-vidmar-0168a1195">linkedin</a>
                     </div>
-                    <div style={{ maxWidth: "30cm", }}>
+                    <div>
                         {children}
                     </div>
                     <div className="footer">
