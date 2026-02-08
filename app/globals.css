@@ -52,9 +52,9 @@
   }
 
   .title {
-    font-size: 1.5cm;
+    font-size: 1.25cm;
     padding-top: 2cm;
-    line-height: 1.125cm;
+    line-height: 1cm;
     text-align: center;
   }
 }
@@ -131,6 +131,7 @@ h2 {
 
 .links-narrow {
   text-align: center;
+  margin-top: 0.25cm;
 }
 
 .links-narrow a {
