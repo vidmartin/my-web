@@ -11,7 +11,7 @@ export default async function Blog(props: { idAttr: string }) {
     return <div className="block" id={props.idAttr}>
         <h1>blog</h1>
         I intend to write about things that interest me: computer science, mathematics, AI, philosophy. And perhaps about my life as well. However, since this web is relatively new, there isn't many posts yet. Stay tuned for more :)
-        <div className="pl-5 pt-5">
+        {postsArray.length > 0 ? <div className="pl-5 pt-5">
             <PaginatedTerminalBlocks blocksPerPage={3} blocks={
                 postsArray.map(post => ({
                     content: post.description,
@@ -19,6 +19,6 @@ export default async function Blog(props: { idAttr: string }) {
                     href: `/blog/${post.id}`
                 }))
             } />
-        </div>
+        </div> : <div className="pl-10 pt-10 text-center">(no content yet)</div>}
     </div>;
 }

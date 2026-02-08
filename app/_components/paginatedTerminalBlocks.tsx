@@ -16,7 +16,7 @@ export function PaginatedTerminalBlocks(
         blocksPerPage: number,
     }
 ) {
-    const nPages = Math.ceil(props.blocks.length / props.blocksPerPage);
+    const nPages = Math.max(Math.ceil(props.blocks.length / props.blocksPerPage), 1);
     const [pageIdx, setPageIdx] = useState(0);
 
     const blocksToShow = props.blocks.slice(
