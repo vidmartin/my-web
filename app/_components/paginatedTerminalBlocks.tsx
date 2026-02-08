@@ -7,6 +7,7 @@ import MarkdownRenderer from "./markdownRenderer";
 export type PaginatedTerminalBlock = {
     title: string,
     href?: string,
+    additionalTitle?: string,
     content: string,
 }
 
@@ -25,7 +26,7 @@ export function PaginatedTerminalBlocks(
     );
     return <div>
         <div>{
-            blocksToShow.map((block, i) => <TerminalBlock key={i} title={block.title} href={block.href}>
+            blocksToShow.map((block, i) => <TerminalBlock key={i} title={block.title} href={block.href} additionalTitle={block.additionalTitle}>
                 <MarkdownRenderer content={block.content} paragraphClassNames="" />
             </TerminalBlock>)
         }</div>

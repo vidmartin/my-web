@@ -6,6 +6,7 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react"
 export type TerminalBlockProps = PropsWithChildren<{
     title: string,
     href?: string,
+    additionalTitle?: string,
 }>;
 
 export default function TerminalBlock(props: TerminalBlockProps) {
@@ -28,7 +29,7 @@ export default function TerminalBlock(props: TerminalBlockProps) {
     return <div className="relative">
         <div ref={titleRef}>+ {
             props.href !== undefined ? (<Link href={props.href}>{props.title}</Link>) : props.title
-        }</div>
+        }{props.additionalTitle ?? ""}</div>
         <div className="absolute top-[1lh]">
             {
                 (observedHeight !== null && lineHeight !== null) ?

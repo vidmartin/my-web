@@ -15,8 +15,9 @@ export default async function Blog(props: { idAttr: string }) {
             <PaginatedTerminalBlocks blocksPerPage={3} blocks={
                 postsArray.map(post => ({
                     content: post.description,
-                    title: `${post.title} (posted ${displayDate(post.publishDate)})`,
-                    href: `/blog/${post.id}`
+                    title: `${post.title}`,
+                    href: `/blog/${post.id}`,
+                    additionalTitle: ` (posted ${displayDate(post.publishDate)})`,
                 }))
             } />
         </div> : <div className="pl-10 pt-10 text-center">(no content yet)</div>}
