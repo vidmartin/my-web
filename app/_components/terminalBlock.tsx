@@ -17,7 +17,7 @@ export default function TerminalBlock(props: TerminalBlockProps) {
 
     useEffect(() => {
         function updateObservedHeight() {
-            setObservedHeight(contentRef.current?.clientHeight ?? null);
+            setObservedHeight(contentRef.current?.getBoundingClientRect()?.height ?? null);
         }
         
         updateObservedHeight();
@@ -25,7 +25,7 @@ export default function TerminalBlock(props: TerminalBlockProps) {
         return () => window.removeEventListener("resize", updateObservedHeight);
     }, []);
 
-    const lineHeight = titleRef.current?.clientHeight ?? null;
+    const lineHeight = titleRef.current?.getBoundingClientRect()?.height ?? null;
     return <div className="relative">
         <div ref={titleRef}>+ {
             props.href !== undefined ? (<Link href={props.href}>{props.title}</Link>) : props.title
@@ -33,7 +33,7 @@ export default function TerminalBlock(props: TerminalBlockProps) {
         <div className="absolute top-[1lh]">
             {
                 (observedHeight !== null && lineHeight !== null) ?
-                    new Array(Math.floor(observedHeight / lineHeight + 1)).fill(0).map((_, i) => <div key={i}>|</div>)
+                    new Array(Math.round(observedHeight / lineHeight)).fill(0).map((_, i) => <div key={i}>|</div>)
                     : <></>
             }
         </div>
