@@ -22,10 +22,12 @@ export default async function BlogPost(props: PageProps<"/blog/[id]">) {
         notFound();
     }
 
+    const publishDate = new Date(Date.parse(metadata.publishDate));
+
     return <>
         <h1 className="text-center mt-10">{metadata.title}</h1>
         <p className="text-center">{metadata.description}</p>
-        <p className="text-right mt-5 mb-5"><i>Posted {metadata.publishDate.getFullYear()}-{metadata.publishDate.getMonth()}-{metadata.publishDate.getDate()}</i></p>
+        <p className="text-right mt-5 mb-5"><i>Posted {publishDate.getFullYear()}-{publishDate.getMonth()}-{publishDate.getDate()}</i></p>
         <div><MarkdownRenderer content={content} /></div>
     </>
 }
