@@ -1,5 +1,5 @@
 
-import { BlogPostMetadata, IBlogPostRepository } from "./blogRepository";
+import { BlogPost, BlogPostMetadata, IBlogPostRepository } from "./blogRepository";
 
 export class EmptyBlogPostRepository implements IBlogPostRepository {
     async getAllMetadata(): Promise<BlogPostMetadata[]> {
@@ -11,5 +11,7 @@ export class EmptyBlogPostRepository implements IBlogPostRepository {
     async getContentById(id: number): Promise<string | null> {
         return null;
     }
-
+    async getBlogPostById(id: number): Promise<BlogPost | null> {
+        return null;
+    }
 }

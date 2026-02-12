@@ -1,5 +1,5 @@
 
-import { BlogPostMetadata, IBlogPostRepository } from "./blogRepository";
+import { BlogPost, BlogPostMetadata, IBlogPostRepository } from "./blogRepository";
 
 const BLOG_POSTS: { [key: number]: BlogPostMetadata } = {
     1: {
@@ -51,5 +51,11 @@ Proin purus turpis, varius at diam id, ornare rutrum velit. Cras feugiat vel lib
 Praesent vitae felis pellentesque nunc pharetra pulvinar non quis metus. Donec in imperdiet nulla. Phasellus laoreet ultricies felis eu hendrerit. In sed libero sed elit rhoncus dignissim et congue dui. Nunc interdum varius purus, id dictum nisi consequat congue. Aliquam sit amet libero neque. Integer convallis vestibulum ipsum, ut viverra nunc consectetur at. Donec vehicula elementum facilisis.
 
 Ut finibus neque id mi pharetra, vel gravida ipsum dignissim. Integer non ipsum ante. Curabitur efficitur dui at tellus malesuada consequat. Suspendisse augue eros, vulputate at pharetra eget, gravida ut ligula. Aliquam vehicula, nibh ut varius scelerisque, erat purus malesuada turpis, nec pulvinar magna massa vitae ex. Nunc eu mauris at felis egestas vestibulum sit amet lobortis lectus. Etiam non iaculis odio. Nullam pharetra malesuada ante in facilisis. Quisque maximus elit mi, id maximus ante ultricies quis. Sed sed ex ligula. Integer imperdiet tristique ante ut finibus. `);
+    }
+    async getBlogPostById(id: number): Promise<BlogPost | null> {
+        return {
+            content: await this.getContentById(id),
+            metadata: await this.getMetadataById(id),
+        }
     }
 }
