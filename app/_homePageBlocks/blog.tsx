@@ -6,7 +6,7 @@ import { PaginatedTerminalBlocks } from "../_components/paginatedTerminalBlocks"
 
 export default async function Blog(props: { idAttr: string }) {
     const postsArray = await BLOG_POST_REPOSITORY.getAllMetadata();
-    postsArray.sort((a, b) => b.publishDate.getTime() - a.publishDate.getTime());
+    postsArray.sort((a, b) => Date.parse(b.publishDate) - Date.parse(a.publishDate));
 
     return <div className="block" id={props.idAttr}>
         <h1>blog</h1>
@@ -17,7 +17,7 @@ export default async function Blog(props: { idAttr: string }) {
                     content: post.description,
                     title: `${post.title}`,
                     href: `/blog/${post.id}`,
-                    additionalTitle: ` (posted ${displayDate(post.publishDate)})`,
+                    additionalTitle: ` (posted ${displayDate(new Date(Date.parse(post.publishDate)))})`,
                 }))
             } />
         </div> : <div className="pl-10 pt-10 text-center">(no content yet)</div>}

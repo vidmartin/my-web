@@ -25,6 +25,9 @@ export class FilesystemBlogPostRepository implements IBlogPostRepository {
         if (!("publishDate" in metadata) || typeof metadata.publishDate != "string") {
             throw new Error("missing publishDate in metadata or it has wrong type");
         }
+        if (metadata.publishDate.match(/^\d\d\d\d-\d\d-\d\d$/g) == null) {
+            throw new Error("incorrect format of publishDate - expected YYYY-MM-DD");
+        }
         if (!("title" in metadata) || typeof metadata.title != "string") {
             throw new Error("missing title in metadata or it has wrong type");
         }
@@ -32,7 +35,7 @@ export class FilesystemBlogPostRepository implements IBlogPostRepository {
         return {
             id: id,
             description: metadata.description,
-            publishDate: new Date(Date.parse(metadata.publishDate)),
+            publishDate: metadata.publishDate,
             title: metadata.title,
         };
     }

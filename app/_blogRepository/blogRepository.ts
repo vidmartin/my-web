@@ -3,7 +3,7 @@ export type BlogPostMetadata = {
     id: number,
     title: string,
     description: string,
-    publishDate: Date,
+    publishDate: string,
 }
 
 export type BlogPost = {

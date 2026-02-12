@@ -6,31 +6,31 @@ const BLOG_POSTS: { [key: number]: BlogPostMetadata } = {
         id: 1,
         title: "My first post",
         description: "The time to unleash my wisdom upon the world has come. An exciting time indeed!",
-        publishDate: new Date(2025, 11, 11),
+        publishDate: "2025-11-11",
     },
     2: {
         id: 2,
         title: "My second post",
         description: "The time to unleash my wisdom upon the world has come. An exciting time indeed!",
-        publishDate: new Date(2025, 11, 21),
+        publishDate: "2025-11-21",
     },
     3: {
         id: 3,
         title: "My third post",
         description: "The time to unleash my wisdom upon the world has come. An exciting time indeed!",
-        publishDate: new Date(2025, 11, 30),
+        publishDate: "2025-11-30",
     },
     4: {
         id: 4,
         title: "My fourth post",
         description: "The time to unleash my wisdom upon the world has come. An exciting time indeed!",
-        publishDate: new Date(2026, 1, 5),
+        publishDate: "2026-01-05",
     },
     5: {
         id: 5,
         title: "My fifth post",
         description: "The time to unleash my wisdom upon the world has come. An exciting time indeed!",
-        publishDate: new Date(2026, 1, 11),
+        publishDate: "2026-01-11",
     },
 }
 
