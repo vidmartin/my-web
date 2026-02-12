@@ -12,9 +12,9 @@ export class CachedBlogPostRepository implements IBlogPostRepository {
         private _wrapped: IBlogPostRepository,
         private _revalidate: number | false,
     ) {
-        this.getAllMetadata = unstable_cache(_wrapped.getAllMetadata, [], { revalidate: _revalidate });
-        this.getMetadataById = unstable_cache(_wrapped.getMetadataById, [], { revalidate: _revalidate });
-        this.getContentById = unstable_cache(_wrapped.getContentById, [], { revalidate: _revalidate });
-        this.getBlogPostById = unstable_cache(_wrapped.getBlogPostById, [], { revalidate: _revalidate });
+        this.getAllMetadata = unstable_cache(() => _wrapped.getAllMetadata(), [], { revalidate: _revalidate });
+        this.getMetadataById = unstable_cache((id: number) => _wrapped.getMetadataById(id), [], { revalidate: _revalidate });
+        this.getContentById = unstable_cache((id: number) => _wrapped.getContentById(id), [], { revalidate: _revalidate });
+        this.getBlogPostById = unstable_cache((id: number) => _wrapped.getBlogPostById(id), [], { revalidate: _revalidate });
     }
 }

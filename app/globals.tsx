@@ -10,6 +10,7 @@ import { MockBlogPostRepository } from "./_blogRepository/mockBlogRepository";
 import { FilesystemBlogPostRepository } from "./_blogRepository/filesystemBlogRepository";
 import { EmptyBlogPostRepository } from "./_blogRepository/emptyBlogPostRepository";
 import { HardCodedProjectsRepository } from "./_projectRepository/hardCodedProjectRepository";
+import { CachedBlogPostRepository } from "./_blogRepository/cachedBlogPostRepository";
 
 type HomePageBlockInfo = {
     name: string,
@@ -46,8 +47,10 @@ export const HOME_PAGE_BLOCKS: HomePageBlockInfo[] = [
 ];
 
 export const BLOG_POST_REPOSITORY = process.env["BLOG_POSTS_DIR"] != undefined ?
-    new FilesystemBlogPostRepository(process.env["BLOG_POSTS_DIR"]) :
-    new EmptyBlogPostRepository();
+    new CachedBlogPostRepository(
+        new FilesystemBlogPostRepository(process.env["BLOG_POSTS_DIR"]),
+        parseInt(process.env["BLOG_POSTS_CACHE_LIFETIME"] ?? "10")
+    ) : new EmptyBlogPostRepository();
 
 export const PROJECT_REPOSITORY = new HardCodedProjectsRepository();
 
