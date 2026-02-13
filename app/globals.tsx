@@ -46,10 +46,13 @@ export const HOME_PAGE_BLOCKS: HomePageBlockInfo[] = [
     // }
 ];
 
-export const BLOG_POST_REPOSITORY = process.env["BLOG_POSTS_DIR"] != undefined ?
+export const ENV_BLOG_POSTS_DIR = "BLOG_POSTS_DIR";
+export const ENV_BLOG_POSTS_CACHE_LIFETIME = "BLOG_POSTS_CACHE_LIFETIME";
+
+export const BLOG_POST_REPOSITORY = process.env[ENV_BLOG_POSTS_DIR] != undefined ?
     new CachedBlogPostRepository(
-        new FilesystemBlogPostRepository(process.env["BLOG_POSTS_DIR"]),
-        parseInt(process.env["BLOG_POSTS_CACHE_LIFETIME"] ?? "10")
+        new FilesystemBlogPostRepository(process.env[ENV_BLOG_POSTS_DIR]),
+        parseInt(process.env[ENV_BLOG_POSTS_CACHE_LIFETIME] ?? "10")
     ) : new EmptyBlogPostRepository();
 
 export const PROJECT_REPOSITORY = new HardCodedProjectsRepository();
