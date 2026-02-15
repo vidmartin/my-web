@@ -1,5 +1,6 @@
 
 import MarkdownRenderer from "../_components/markdownRenderer";
+import { PaginatedTerminalBlocks } from "../_components/paginatedTerminalBlocks";
 import TerminalBlock from "../_components/terminalBlock";
 import { PROJECT_REPOSITORY } from "../globals";
 
@@ -11,11 +12,12 @@ export default async function Projects(props: { idAttr: string }) {
         <h1>projects</h1>
         Here are some personal projects of mine, including school projects.
         <div className="pl-5 pt-5">
-            {projects.map(
-                project => <TerminalBlock key={project.id} title={project.title}>
-                    <MarkdownRenderer content={project.description} paragraphClassNames="" />
-                </TerminalBlock>
-            )}
+            <PaginatedTerminalBlocks blocksPerPage={3} blocks={
+                projects.map(project => ({
+                    content: project.description,
+                    title: `${project.year}: ${project.title}`,
+                }))
+            } />
         </div>
     </div>;
 }

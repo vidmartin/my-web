@@ -26,7 +26,13 @@ export function PaginatedTerminalBlocks(
     );
     return <div>
         <div>{
-            blocksToShow.map((block, i) => <TerminalBlock key={i} title={block.title} href={block.href} additionalTitle={block.additionalTitle}>
+            blocksToShow.map((block, i) => 
+            <TerminalBlock
+                key={pageIdx * props.blocksPerPage + i}
+                title={block.title}
+                href={block.href}
+                additionalTitle={block.additionalTitle}
+            >
                 <MarkdownRenderer content={block.content} paragraphClassNames="" />
             </TerminalBlock>)
         }</div>
