@@ -18,6 +18,7 @@ export default function Tech(props: { idAttr: string }) {
             <img src="/stack/rust.png" className="tech-icon" />
             <img src="/stack/scala.png" className="tech-icon" />
             <img src="/stack/ts.png" className="tech-icon" style={{ height: "2.75em" }} />
+            <img src="/stack/qiskit.png" className="tech-icon" />
         </div>
     </div>
 }
