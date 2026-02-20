@@ -60,7 +60,9 @@ export default function RootLayout({
                         {children}
                     </div>
                     <div className="footer">
-                        <div>Icons made by <a href="https://www.flaticon.com/authors/phoenix-group" title="Phoenix Group">Phoenix Group</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                        <div>icons made by <a href="https://www.flaticon.com/authors/phoenix-group" title="Phoenix Group">Phoenix Group</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+                        <br/>
+                        <div>© vidmartin 2026</div>
                     </div>
                 </MathJaxContext>
             </body>
