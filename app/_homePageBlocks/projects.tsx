@@ -1,7 +1,5 @@
 
-import MarkdownRenderer from "../_components/markdownRenderer";
 import { PaginatedTerminalBlocks } from "../_components/paginatedTerminalBlocks";
-import TerminalBlock from "../_components/terminalBlock";
 import { PROJECT_REPOSITORY } from "../globals";
 
 export default async function Projects(props: { idAttr: string }) {

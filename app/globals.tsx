@@ -11,6 +11,7 @@ import { FilesystemBlogPostRepository } from "./_blogRepository/filesystemBlogRe
 import { EmptyBlogPostRepository } from "./_blogRepository/emptyBlogPostRepository";
 import { HardCodedProjectsRepository } from "./_projectRepository/hardCodedProjectRepository";
 import { CachedBlogPostRepository } from "./_blogRepository/cachedBlogPostRepository";
+import TechStack from "./_homePageBlocks/techStack";
 
 type HomePageBlockInfo = {
     name: string,
@@ -23,6 +24,11 @@ export const HOME_PAGE_BLOCKS: HomePageBlockInfo[] = [
         name: "about me",
         component: AboutMe,
         idAttr: "about-me",
+    },
+    {
+        name: "stack",
+        component: TechStack,
+        idAttr: "stack",
     },
     {
         name: "career",
