@@ -53,7 +53,7 @@
 
   .title {
     font-size: 1.25cm;
-    padding-top: 2cm;
+    padding-top: 3cm;
     line-height: 1cm;
     text-align: center;
   }
@@ -62,7 +62,7 @@
 @media (width >= 20cm) {
   .title {
     font-size: 2cm;
-    padding-top: 2cm;
+    padding-top: 3cm;
     line-height: 1.5cm;
     text-align: center;
   }
