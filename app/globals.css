@@ -190,3 +190,7 @@ pre.code {
   display: inline-block;
   margin: 0.5em;
 }
+
+.tech-icon:hover {
+  transform: scale(1.15);
+}
