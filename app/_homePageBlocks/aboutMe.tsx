@@ -1,6 +1,8 @@
 
+import HomePageBlock from "../_components/homePageBlock";
+
 export default function AboutMe(props: { idAttr: string }) {
-    return <div className="block" id={props.idAttr}>
+    return <HomePageBlock idAttr={props.idAttr}>
         <div className="text-center">
             <div className="me" />
         </div>
@@ -20,5 +22,5 @@ export default function AboutMe(props: { idAttr: string }) {
                 music and am a self-taught piano and guitar user.
             </p>
         </div>
-    </div>;
+    </HomePageBlock>;
 }

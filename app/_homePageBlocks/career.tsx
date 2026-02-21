@@ -1,8 +1,9 @@
 
+import HomePageBlock from "../_components/homePageBlock";
 import TerminalBlock from "../_components/terminalBlock";
 
 export default function Career(props: { idAttr: string }) {
-  return <div className="block" id={props.idAttr}>
+  return <HomePageBlock idAttr={props.idAttr}>
     <h1>career</h1>
     <div className="pl-5 pt-5">
       <TerminalBlock title={"Marketup (2021 - 2025)"}>
@@ -25,5 +26,5 @@ export default function Career(props: { idAttr: string }) {
         </ul>
       </TerminalBlock>
     </div>
-  </div>
+  </HomePageBlock>
 }

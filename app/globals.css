@@ -90,6 +90,7 @@ h2 {
 .block {
   padding-bottom: 0.75cm;
   padding-top: 0.75cm;
+  transition: opacity 0.25s;
 }
 
 .footer {
