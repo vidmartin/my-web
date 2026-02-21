@@ -44,9 +44,9 @@ export default function Tech(props: { idAttr: string }) {
     return <HomePageBlock idAttr={props.idAttr}>
         <h1>stack</h1>
         Here are some technologies (languages, libraries, frameworks, tools, etc.) I've touched over the years.
-        <div className="text-center mt-5 pl-40 pr-40 relative">
-            <div className="relative">
-                <div style={{ position: "absolute", top: "50%", right: "100%", transform: "translateY(-50%)", textWrap: "nowrap" }}>{annotation != null ? `[${annotation}]` : ""}</div>
+        <div className="text-center mt-5 relative">
+            <div className="relative" style={{ display: "inline-block", width: "70%" }}>
+                <div style={{ position: "absolute", top: "50%", left: "100%", transform: "translateY(-50%)", textWrap: "nowrap" }}>{annotation != null ? `[${annotation}]` : ""}</div>
                 {TECHS.map(
                     attrs => <TechIcon
                         key={attrs.src}
