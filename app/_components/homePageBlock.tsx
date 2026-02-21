@@ -2,8 +2,8 @@
 
 import { PropsWithChildren, useEffect, useRef, useState } from "react";
 
-export default function HomePageBlock(props: PropsWithChildren<{ idAttr: string }>) {
-    const [opacity, setOpacity] = useState<number>(1.0);
+export default function HomePageBlock(props: PropsWithChildren<{ idAttr: string, initOpacity: number }>) {
+    const [opacity, setOpacity] = useState<number>(props.initOpacity);
     const blockRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

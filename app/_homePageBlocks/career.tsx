@@ -2,8 +2,8 @@
 import HomePageBlock from "../_components/homePageBlock";
 import TerminalBlock from "../_components/terminalBlock";
 
-export default function Career(props: { idAttr: string }) {
-  return <HomePageBlock idAttr={props.idAttr}>
+export default function Career(props: { idAttr: string, initOpacity: number }) {
+  return <HomePageBlock idAttr={props.idAttr} initOpacity={props.initOpacity}>
     <h1>career</h1>
     <div className="pl-5 pt-5">
       <TerminalBlock title={"Marketup (2021 - 2025)"}>

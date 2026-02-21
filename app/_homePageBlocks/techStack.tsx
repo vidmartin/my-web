@@ -38,10 +38,10 @@ const TECHS: { src: string, annotation: string, height?: string }[] = [
     { src: "/stack/qiskit.png", annotation: "Qiskit" },
 ]
 
-export default function Tech(props: { idAttr: string }) {
+export default function Tech(props: { idAttr: string, initOpacity: number }) {
     const [annotation, setAnnotation] = useState<string | null>(null);
 
-    return <HomePageBlock idAttr={props.idAttr}>
+    return <HomePageBlock idAttr={props.idAttr} initOpacity={props.initOpacity}>
         <h1>stack</h1>
         Here are some technologies (languages, libraries, frameworks, tools, etc.) I've touched over the years.
         <div className="text-center mt-5 relative">

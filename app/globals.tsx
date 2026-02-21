@@ -15,7 +15,7 @@ import TechStack from "./_homePageBlocks/techStack";
 
 type HomePageBlockInfo = {
     name: string,
-    component: (props: { idAttr: string }) => React.ReactElement | Promise<React.ReactElement>,
+    component: (props: { idAttr: string, initOpacity: number }) => React.ReactElement | Promise<React.ReactElement>,
     idAttr: string,
 };
 

@@ -1,8 +1,8 @@
 
 import HomePageBlock from "../_components/homePageBlock";
 
-export default function AboutMe(props: { idAttr: string }) {
-    return <HomePageBlock idAttr={props.idAttr}>
+export default function AboutMe(props: { idAttr: string, initOpacity: number }) {
+    return <HomePageBlock idAttr={props.idAttr} initOpacity={props.initOpacity}>
         <div className="text-center">
             <div className="me" />
         </div>
