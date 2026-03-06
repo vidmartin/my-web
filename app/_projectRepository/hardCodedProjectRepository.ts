@@ -40,7 +40,13 @@ const PROJECTS_LIST_WITHOUT_ID: Omit<Project, "id">[] = [
             "It's available on [GitHub](https://github.com/vidmartin/passman).",
         title: "passman"
     },
-    // TODO: wordworld
+    {
+        year: 2021,
+        description:
+            "A web-based Scrabble-like game written in ASP.NET Core. " +
+            "It's available on [GitHub](https://github.com/vidmartin/wordworld).",
+        title: "WordWorld"
+    },
 ];
 
 const PROJECTS: { [id: number]: Project } = Object.fromEntries(
